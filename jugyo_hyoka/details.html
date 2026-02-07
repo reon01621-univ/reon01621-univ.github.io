@@ -45,7 +45,9 @@
                 if (result.status === 'success' && result.data.length > 0) {
                     title.innerHTML = `
                     <h1 class = "title2">
+                        <span id="title">
                         ${escapeHTML(result.data[0].courseName)} の評価詳細
+                        </span>
                     </h1>`;
                     container.innerHTML = '';
                     
