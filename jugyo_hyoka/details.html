@@ -9,7 +9,7 @@
 <body>
 
 
-    <header class="header"><h1 id="title">ITF.IKOU</h1><h3>筑波大学総合学域群非公式情報サイト</h3></header>
+    <header class="header"><h1">ITF.IKOU</h1><h3>筑波大学総合学域群非公式情報サイト</h3></header>
     <div class="site-container">
         <main class="main-content">
             <div id="main-app">
@@ -43,8 +43,10 @@
                 const result = await response.json();
                 
                 if (result.status === 'success' && result.data.length > 0) {
-                    title.textContent = `${escapeHTML(result.data[0].courseName)} の評価詳細`;
-                    container.innerHTML = '';
+                    title.innerHTML = `
+                    <h1 class = "title">
+                        ${escapeHTML(result.data[0].courseName)} の評価詳細
+                    </h1>`;
                     
                     result.data.forEach(e => {
                         const card = document.createElement('div');
